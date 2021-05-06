@@ -1,0 +1,245 @@
+@font-face{
+    font-family: "Avenir";
+    src: url("Avenir.otf")format("opentype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Avenir";
+}
+/*
+*{
+box-sizing: border-box
+}
+Code Reference:
+Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Website Tutorials [Video]. Retrieved 6 May 2020, from https://www.youtube.com/watch?v=wHFflWvii3M&t=522s.
+*/
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+}
+
+body {
+    background-color: rgb(70, 130, 180);
+    width:100%;
+    height:100%;
+}
+
+#menu-bar {
+    width:100%;
+    padding: 15px;
+    text-align: center;
+    background-color: cornsilk;
+    font-size: 22px;
+}
+
+#menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+}
+/*
+#menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+}
+Code Reference:
+Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Website Tutorials [Video]. Retrieved 6 May 2020, from https://www.youtube.com/watch?v=wHFflWvii3M&t=522s.
+*/
+
+#menu-bar ul li{
+    width: 200px;
+    margin: 15px;
+    padding: 0px;
+    position: relative;
+    border-radius: 5px;
+}
+
+#menu-bar ul li a{
+    color:black;
+    text-decoration: none;
+}
+
+#menu-bar ul li a:hover {
+    color:rgb(218, 97, 97);
+}
+
+.bg {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 0px 0px 50px 0px;
+}
+
+#main-pic {
+    opacity: 0.6;
+    width: 100%; 
+    display: block;
+    text-decoration: none;
+}
+
+.centre-text p{
+    position: absolute;
+    text-align: center;
+    padding: 0px 50px;
+    bottom: 27%;
+    left: 0%;
+    font-size: 18px;
+}
+
+.start-button {
+    position: absolute;
+    border: 1px solid black;
+    color: black;
+    background-color: cornsilk;
+    padding: 2px;
+    margin: 0px 47%;
+    border-radius: 5px;
+    bottom: 8%;
+    text-align:center;
+    width: 120px;
+}
+
+.start-button a{
+    color: rgb(218, 97, 97);
+    text-decoration: none;
+}
+
+.start-button a:hover{
+    color:rgb(70, 130, 180);
+}
+
+.main-content{
+    width: 80%;
+    display: flex;
+    height: auto;
+    margin: 50px auto 120px auto;
+    position: relative;
+    padding: 40px 40px 0px 40px;
+    border-radius: 20px;
+    background-color: cornsilk;
+}
+
+.lessons-title{
+    position: absolute;
+    padding: 0px 15px;
+}
+
+.forms {
+    margin: 2px;
+    padding: 20px 10px;
+}
+
+.forms section h2 {
+    font-size: 35px;
+}
+
+.forms section p a {
+    color: rgb(218, 97, 97);
+    text-decoration: none;
+    margin: 0px 20px 0px 0px;
+}
+
+.forms section p a:hover{
+    color: rgb(70, 130, 180)
+}
+
+.main-content section p{
+    margin: 20px 0px;
+}
+
+.main-content section ul li{
+    margin: 20px 0px;
+}
+
+
+.column{
+    padding-left:15px;
+    margin-left: 2px;
+    margin: 40px 0px;
+    float: left;
+    width:33%;
+}
+
+.column p a{
+    color:rgb(218, 97, 97);
+}
+
+.column p a:hover{
+    color: rgb(70, 130, 180);
+}
+
+.column h2{
+    text-align: left;
+}
+
+footer{
+    margin: 30px 75px;
+    clear:both;
+}
+
+footer p{
+    text-align:left;
+}
+
+@media (max-device-width: 600px) {
+
+    h1{
+        font-size: 30px;
+    }
+
+    #menu-bar {
+        font-size: 15px;
+        padding: 0px;
+    }
+  
+    #menu-bar ul li{
+        width: 100%;
+        display: block;
+    }
+
+    #main-pic{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }    
+
+    .main-content{
+        flex-direction: column;
+        height: auto;
+        margin: 0px;
+    }
+
+    .main-content{
+        width: 93%;
+        display: flex;
+        height: auto;
+        margin: 0px auto 20px auto;
+        position: relative;
+        padding: 15px;
+        border-radius: 20px;
+        background-color: rgb(109, 171, 230);
+    }
+    
+    .column{
+        width: 100%;
+        }
+}
+
+@media (min-device-width:600px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #menu-bar ul li{
+        width: 100%;
+    }
+
+    #menu-bar ul li:hover .submenu ul li{
+        text-align: left;
+    }
+}
+
+@media (max-device-width: 1024px) and (orientation: landscape) {
+}
