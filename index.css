@@ -159,6 +159,27 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
     color: rgb(70, 130, 180)
 }
 
+#successRego{
+    top: 0%;
+    z-index: 1;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px; 
+    background-color: rgb(239, 173, 115);
+}
+
+#closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+#closebtn:hover {
+    color: black;
+}
+
 #full-name,#email{
     text-align: left;
     color: black;
@@ -212,14 +233,6 @@ textarea{
     text-align: left;
 }
 
-footer{
-    margin: 30px 75px;
-    clear:both;
-}
-
-footer p{
-    text-align:left;
-}
 
 @media (max-device-width: 600px) {
 
@@ -276,7 +289,4 @@ footer p{
     #menu-bar ul li:hover .submenu ul li{
         text-align: left;
     }
-}
-
-@media (max-device-width: 1024px) and (orientation: landscape) {
 }
