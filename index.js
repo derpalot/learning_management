@@ -55,10 +55,12 @@ if (localStorage.length != 0) {
     var counter = 0;
 }
 
-for(var i = 0; i < counter; i++) {
-    var text = document.createElement("li");
-    text.textContent = localStorage.getItem(i);
-    document.getElementById("testimonials-list").appendChild(text);
+if(document.getElementById("testimonials-list")){
+    for(var i = 0; i < counter; i++) {
+        var text = document.createElement("li");
+        text.textContent = localStorage.getItem(i);
+        document.getElementById("testimonials-list").appendChild(text);
+    }
 }
 
 function createTestimonial() { 
