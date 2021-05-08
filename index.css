@@ -285,8 +285,4 @@ textarea{
     #menu-bar ul li{
         width: 100%;
     }
-
-    #menu-bar ul li:hover .submenu ul li{
-        text-align: left;
-    }
 }
