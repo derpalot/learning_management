@@ -1,7 +1,6 @@
-//
-// slideshow
-//
-
+/////////////////
+/// slideshow ///
+/////////////////
 var slideShowImages = ["teaching.jpeg", "teachingOne.jpeg", "teachingTwo.jpeg", "teachingThree.jpeg"];
 var index = 0;
 var increment = 1;
@@ -43,11 +42,20 @@ document.getElementById("main-pic").addEventListener("click", function() {
     }
 });
 
-//
-// testimonials
-//
+///////////////////
+/// testimonial ///
+///////////////////
+if (localStorage.length != 0) {
+    var counter = localStorage.length;
+} else {
+    var counter = 0;
+}
 
-var testimonialArray = [];
+for(var i = 0; i < counter; i++) {
+    var text = document.createElement("li");
+    text.textContent = localStorage.getItem(i);
+    document.getElementById("testimonials-list").appendChild(text);
+}
 
 function createTestimonial() { 
     var testimonial = document.createElement("li");
@@ -56,18 +64,23 @@ function createTestimonial() {
         return;
     }
     testimonial.textContent = text;
-    testimonialArray.push(testimonial.textContent);
+    localStorage.setItem(counter, text);
     document.getElementById("testimonials-list").appendChild(testimonial);
     document.getElementById("testimonials-text").value = '';
+    counter++;
 }
 
 function removeTestimonial() {
-    var testArray = document.getElementById("testimonials-list").getElementsByTagName("li");
-    console.log(testArray[testArray.length -1]);
-    removeChild = testArray[testArray.length -1];
-    removeChild.parentNode.removeChild(removeChild)
+    if (counter > 0){ 
+        var testArray = document.getElementById("testimonials-list").getElementsByTagName("li");
+        child = testArray[testArray.length -1];
+        child.parentNode.removeChild(child);
+        localStorage.removeItem(counter-1); 
+        counter--;
+    }
 }
 
 document.getElementById("write-testimonials").addEventListener("click", function() {createTestimonial();});
 document.getElementById("remove-testimonials").addEventListener("click", function() {removeTestimonial();});
+
 
