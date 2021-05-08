@@ -76,25 +76,31 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
 }
 
 #main-pic {
-    opacity: 0.6;
+    opacity: 0.8;
+    transition: opacity 3s;
     width: 100%; 
     display: block;
     text-decoration: none;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
 }
 
-.centre-text p{
+#centre-text p{
     position: absolute;
     text-align: center;
     padding: 0px 50px;
+    color: rgb(218, 97, 97);
     bottom: 27%;
     left: 0%;
     font-size: 18px;
 }
 
-.start-button {
+#start-button {
     position: absolute;
     border: 1px solid black;
-    color: black;
+    color: rgb(218, 97, 97);
     background-color: cornsilk;
     padding: 2px;
     margin: 0px 47%;
@@ -102,14 +108,11 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
     bottom: 8%;
     text-align:center;
     width: 120px;
-}
-
-.start-button a{
     color: rgb(218, 97, 97);
     text-decoration: none;
 }
 
-.start-button a:hover{
+#start-button:hover{
     color:rgb(70, 130, 180);
 }
 
@@ -129,8 +132,14 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
     padding: 0px 15px;
 }
 
+#testimonials-list li{
+    list-style-type: none;
+}
+
 .forms {
     margin: 2px;
+    width: 100%;
+    word-wrap: break-word;
     padding: 20px 10px;
 }
 
@@ -138,14 +147,27 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
     font-size: 35px;
 }
 
-.forms section p a {
+.forms section input {
+    padding: 0px 20px;
+    margin: 0px 30px 0px 0px;
+    text-align: center;
     color: rgb(218, 97, 97);
     text-decoration: none;
-    margin: 0px 20px 0px 0px;
 }
 
-.forms section p a:hover{
+.forms section input:hover{
     color: rgb(70, 130, 180)
+}
+
+form{
+    padding: 20px 0px;
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
 }
 
 .main-content section p{
@@ -203,6 +225,8 @@ footer p{
     }
 
     #main-pic{
+        min-height: 100px;
+        max-height: 100px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;

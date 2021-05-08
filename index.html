@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta charset='utf-8' />
     <!-- <link href = "reset.css" rel = "stylesheet"/> -->
-    <link href = "index.css" rel = "stylesheet"/>
+    <link href= "index.css" rel = "stylesheet"/>
     <title>Happy Learning</title>
 </head>
 <body>
@@ -23,9 +23,9 @@
     </div>
     <div class ="bg">
         <img id = "main-pic" src = "teaching.jpeg" alt ="teaching"/>
-        <div class = "centre-text"><p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Sed vulputate mi sit amet mauris. In arcu cursus euismod quis viverra nibh cras pulvinar mattis." - By Someone</em></p>
+        <div id = "centre-text"><p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing elit. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Sed vulputate mi sit amet mauris. In arcu cursus euismod quis viverra nibh cras pulvinar mattis." - By Someone</em></p>
         </div>
-        <div class = "start-button"><a href= "#">Slide Show</a></div>
+        <div id = "start-button">Slide Show</div>
     </div>
     <!--
     Image Reference
@@ -59,10 +59,16 @@
     <div class = "main-content">
         <div class = "forms"> 
         <section>
-            <h2 id= "testimonals">Testimonals</h2>
-            <p>testimonal<br><br><a href="">Write Testimonials</a><a href="">Remove Testimonals</a></p>
+            <h2 id = "testimonials">Testimonals</h2>
+            <ul id = "testimonials-list"></ul>
+            <form>
+                <textarea id = "testimonials-text" rows="5"></textarea>
+            </form>
+            <input type="submit" id = "write-testimonials" value="Write">
+            <input type="submit" id = "remove-testimonials" value= "Remove">
         </section>
         </div>
     </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
