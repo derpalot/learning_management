@@ -9,14 +9,17 @@
 <body>
     <div class= "main-content">
         <div class = "forms">
-        <section>
+        <form id= "registration-form">
+        <section id = "rego-session">
             <h2>Registration Form</h2>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie justo eget libero consectetur ornare. Praesent pulvinar diam eu lacus laoreet dapibus. Donec non pellentesque arcu. Nunc mollis vehicula luctus. Integer sit amet euismod dui. Mauris mauris ante, ultricies non magna quis, eleifend finibus ante.</p>
-            <textbox>Email</textbox><br>
-            <textbox>Full Name</textbox><br>
-            <div id= "register-button"><a href="index.html">Register</a></div>
+            <input id = "email" type="text" placeholder="Email" required/><br>
+            <input id = "full-name" type="text" placeholder="Full Name" required/><br>
+            <input id= "register-button" type="submit" value="Register" required/>
         </section>
+        </form>
         </div>
     </div>
+    <script type="text/javascript" src="registration.js"></script>
 </body>
 </html>

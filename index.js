@@ -82,5 +82,3 @@ function removeTestimonial() {
 
 document.getElementById("write-testimonials").addEventListener("click", function() {createTestimonial();});
 document.getElementById("remove-testimonials").addEventListener("click", function() {removeTestimonial();});
-
-
