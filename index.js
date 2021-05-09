@@ -139,3 +139,152 @@ if(sessionStorage.length != 0 && document.getElementById("index") != null) {
         });
     }
 }
+
+////////////
+/// Quiz ///
+////////////
+
+function validateForm() {
+
+    var age = document.getElementById("age").value;
+    sessionStorage.setItem("Age", null);
+
+    var genderRadio = document.getElementsByName("gender");
+    sessionStorage.setItem("Gender", null);
+
+    var tutorRadio = document.getElementsByName("tutoringType");
+    sessionStorage.setItem("Tutor", null);
+
+    var subjectsRadio = document.getElementsByName("subjects");
+    var counter = 0;
+
+    var otherSubjects = document.getElementById("otherSubjects");
+
+    var education = document.getElementById("education").value;
+    sessionStorage.setItem("Education", education);
+
+    if(otherSubjects.value == "") {
+        sessionStorage.setItem("otherSubjects", null);
+    } else {
+        console.log(otherSubjects.value);
+        sessionStorage.setItem("otherSubjects", otherSubjects.value);
+    }
+    for(var i = 0; i < genderRadio.length; i++) {
+        if(genderRadio[i].checked) {
+            sessionStorage.setItem("Gender", genderRadio[i].value);
+            break;
+        }
+    }
+
+    for(var i = 0; i < tutorRadio.length; i++) {
+        if(tutorRadio[i].checked) {
+            sessionStorage.setItem("Tutor", tutorRadio[i].value);
+            break;
+        }
+    }
+
+    for(var i = 0; i < subjectsRadio.length; i++) {
+        if(subjectsRadio[i].checked) {
+            sessionStorage.setItem(counter, subjectsRadio[i].value);
+            counter++;
+        }
+    }
+
+    sessionStorage.setItem("counter", counter);
+
+    if(age =="" || isNaN(age) || (age > 130) || (age < 1)) {
+        if(ageError == false) {
+            var invalidInput = document.createElement("div");
+            invalidInput.textContent = "Please insert a valid age";
+            var question = document.getElementById("form-inner");
+            question.insertBefore(invalidInput, (document.getElementById("age")));
+            ageError = true;
+            invalidInput.id = "invalid";
+        }
+    } else{ 
+        if(ageError == true) {
+            document.getElementById("invalid").remove();
+            ageError = false;
+        }
+        sessionStorage.setItem("Age", age);
+    }
+
+    if(sessionStorage.getItem("Gender") == "null") {
+        if(genderError == false) {
+            var invalidInput = document.createElement("div");
+            invalidInput.textContent = "Please select a gender";
+            var question = document.getElementById("radioGender");
+            question.insertBefore(invalidInput, question.firstChild); 
+            genderError = true;
+        }
+    } else if(genderError == true) {
+        document.getElementById("radioGender").firstChild.remove();
+        genderError = false;
+    }
+
+    if( sessionStorage.getItem("Tutor")== "null") {
+        if( tutorError == false) {
+            var invalidInput = document.createElement("div");
+            invalidInput.textContent = "Please select your preference";
+            var question = document.getElementById("radioTutor");
+            question.insertBefore(invalidInput, question.firstChild); 
+            tutorError = true;
+        }
+    } else if(tutorError == true) {
+        document.getElementById("radioTutor").firstChild.remove();
+        tutorError = false;
+    }
+
+    if(counter == 0 && sessionStorage.getItem("otherSubjects")== "null") {
+        if( subjectError == false) {
+            var invalidInput = document.createElement("div");
+            invalidInput.textContent = "Please select your subjects";
+            var question = document.getElementById("subjectCheck");
+            question.insertBefore(invalidInput, question.firstChild); 
+            subjectError = true;
+        }
+    } else if(subjectError == true) {
+        document.getElementById("subjectCheck").firstChild.remove();
+        subjectError = false;
+    }
+}
+
+var ageError = false;
+var genderError = false;
+var tutorError = false;
+var subjectError = false;
+
+if(document.getElementById("quiz-submit") != null) {
+    sessionStorage.clear();
+    document.getElementById("quiz-submit").addEventListener("click", function() {
+        validateForm();
+        if(sessionStorage.getItem("Tutor") != "null" && sessionStorage.getItem("Gender") != "null" && sessionStorage.getItem("Age")!= "null" &&  (sessionStorage.getItem("otherSubjects") != "null" || parseInt(sessionStorage.getItem("counter")) != 0)){
+            window.location.href = "response.html"; 
+        }
+    });
+}
+
+////////////////
+/// response ///
+////////////////
+if(document.getElementById("response-list") != null) {
+    counter = parseInt(sessionStorage.getItem("counter"));
+    answerArray = ["Age", "Gender", "Education", "Tutor"];
+    for(var i in answerArray) {
+        var answer = document.createElement("li");
+        answer.textContent = answerArray[i] + ": " + sessionStorage.getItem(answerArray[i]);
+        document.getElementById("response-list").appendChild(answer);
+    }
+    var subject =  document.createElement("li");
+    subject.textContent = "Subjects: ";
+    if(counter != 0) {
+        for(var i = 0; i < counter; i ++){
+            subject.textContent += sessionStorage.getItem(i) + " ";  
+        }
+        if(sessionStorage.getItem("otherSubhects") != "null") {
+            subject.textContent += sessionStorage.getItem("otherSubjects");
+        }
+    }
+    document.getElementById("response-list").appendChild(subject);
+
+}

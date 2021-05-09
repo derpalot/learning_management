@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1".>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
     <meta charset = 'utf-8'/>
-    <link href="index.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet"/>
     <title>Quiz</title>
 </head>
 
@@ -11,9 +11,95 @@
         <div class= "forms">
             <section>
                 <h2>Quiz</h2>
-            <div id= "submit-button">Submit</div>
+                <form>
+                    <label for= "name" class="question">Age</label><br>
+                    <fieldset id ="form-inner">
+                        <input type="text" class="inputSmall" id="age" placeholder="18" required /><br><br>
+
+                        <label for= "gender" class="question">Gender</label>
+                        <ul id= "radioGender">
+                            <li>
+                                <input type="radio" id="female" name="gender" value="Female" required/>
+                                <label class= "gender" for="female">Female</label>
+                            </li>
+                            <li>
+                                <input type="radio" id= "male" name= "gender" value="Male" />
+                                <label class= "gender" for="male">Male</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="other" name= "gender" value = "Other"/>
+                                <label class= "gender" for="other">Other</label>
+                            </li>
+                        </ul>                        
+
+                        <label for= "education" class="question">Highest Education Level</label>
+                        <p>
+                            <select size= "1" name="choice" id = "education">
+                                <option value= "Preschool">preschool</option>
+                                <option value= "Primary">primary</option>
+                                <option value= "Secondary">secondary</option>
+                                <option value= "Higher">higher</option>
+                            </select>
+                        </p>
+
+                        <label for= "subjects" class="question">What subjects do you study</label>
+                        <ul id = "subjectCheck">
+                            <li>
+                                <input type="checkbox" id="math" name="subjects" required value="Maths"/>
+                                <label class= "subjects" for="math">Maths</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="english" name="subjects" value="English"/>
+                                <label class= "subjects" for="english">English</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="chemistry" name="subjects" value="Chemistry"/>
+                                <label class= "subjects" for="chemistry">Chemistry</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="physics" name="subjects" value="Physics"/>
+                                <label class= "subjects" for="physics">Physics</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="engineerging" name="subjects" value="Engineering"/>
+                                <label class= "subjects" for="engineerging">Engineerging</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="history" name="subjects" value="History"/>
+                                <label class= "subjects" for="history">History</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="law" name="subjects" value="Legal Studies"/>
+                                <label class= "subjects" for="law">Legal Studies</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="economics" name="subjects" value="Economics"/>
+                                <label class= "subjects" for="economics">Economics</label>
+                            </li>
+                            <li>
+                                <label class= "subjects" for="otherSubjects">Other</label>
+                                <input type="text" id="otherSubjects" name="subjects"/>
+                            </li>
+                        </ul>
+
+                        <label for= "tutoringType" class="question">Do you prefer tutoring in groups or individually?</label>
+                        <ul id = "radioTutor">
+                            <li>
+                                <input type= "radio" id="individual" name="tutoringType" value="Indiviudal" required/>
+                                <label class= "tutoringType" for="individual">Individual</label>
+                            </li>
+                            <li>
+                                <input type= "radio" id="group" name="tutoringType" value="Group"/>
+                                <label class= "tutoringType" for="group">Group</label>
+                            </li>
+                        </ul>
+
+                    </fieldset>
+                </form>
+                <input id= "quiz-submit" type="reset"/>
             </section>
         </div>
     </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
-
+</html>

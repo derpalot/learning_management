@@ -75,6 +75,14 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
     margin: 0px 0px 50px 0px;
 }
 
+#age, #otherSubjects {
+    color: black;
+}
+
+#invalid {
+
+}
+
 #main-pic {
     opacity: 0.8;
     transition: opacity 3s;
@@ -90,8 +98,7 @@ Easy Tutorial. (2019). How To Make Drop Down Menu Using HTML And CSS | HTML Webs
 #centre-text p{
     position: absolute;
     text-align: center;
-    padding: 0px 50px;
-    color: rgb(218, 97, 97);
+    color: rgb(195, 128, 128);
     bottom: 27%;
     left: 0%;
     font-size: 18px;
@@ -204,6 +211,31 @@ textarea{
     padding: 10px 20px;
 }
 
+#form-inner {
+    border:none;
+    list-style-type: none;
+}
+
+#form-inner ul, #form-inner p{
+    padding: 10px 5%;
+    list-style-type: none;
+}
+ 
+#age, #invalid {
+    margin: 10px 5%;
+}
+
+#form-inner div{
+    background-color: rgb(255, 192, 76);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.question {
+    font-weight: bold;
+}
+
 .main-content section p{
     margin: 20px 0px;
 }
@@ -280,6 +312,8 @@ textarea{
         width: 100%;
         }
 }
+
+
 
 @media (min-device-width:600px) and (max-device-width: 1024px) and (orientation: portrait) {
     #menu-bar ul li{
