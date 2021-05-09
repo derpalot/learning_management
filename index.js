@@ -192,7 +192,7 @@ function validateForm() {
 
     sessionStorage.setItem("counter", counter);
 
-    if(age =="" || isNaN(age) || (age > 130) || (age < 1)) {
+    if(age =="" || isNaN(age) || (age > 80) || (age < 1)) {
         if(ageError == false) {
             var invalidInput = document.createElement("div");
             invalidInput.textContent = "Please insert a valid age";
@@ -281,7 +281,7 @@ if(document.getElementById("response-list") != null) {
         for(var i = 0; i < counter; i ++){
             subject.textContent += sessionStorage.getItem(i) + " ";  
         }
-        if(sessionStorage.getItem("otherSubhects") != "null") {
+        if(sessionStorage.getItem("otherSubjects") != "null") {
             subject.textContent += sessionStorage.getItem("otherSubjects");
         }
     }
